@@ -100,11 +100,11 @@ body.dark-mode {
 }
 
 body.dark-mode #wrapper {
-    background-color: #1c1c1c; /* Change as per your preference */
+    background-color: #1c1c1c;
 }
 
 body.dark-mode header, body.dark-mode nav, body.dark-mode main article {
-    background-color: #1c1c1c; /* You can adjust this color */
+    background-color: #1c1c1c; 
 }
 
 body.dark-mode nav ul li a {
@@ -127,6 +127,6 @@ body.dark-mode main p {
     color: #dfdfdf;
 }
 
-body.dark-mode main p li {
+body.dark-mode main li {
     color: #dfdfdf;
 }
