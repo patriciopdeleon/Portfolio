@@ -127,3 +127,6 @@ body.dark-mode main p {
     color: #dfdfdf;
 }
 
+body.dark-mode main p li {
+    color: #dfdfdf;
+}
