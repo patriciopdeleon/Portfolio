@@ -164,6 +164,7 @@ footer {
 footer a {
     text-decoration: none;
     color: var(--font-color-footer);
+    font-weight: 250;
 }
 
 footer a:hover {
