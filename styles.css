@@ -183,7 +183,6 @@ footer a {
     font-weight: 250;
 }
 
-#name a:is(:hover, :focus-visible),
 nav a:is(:hover, :focus-visible),
 #main-content h2 a:is(:hover, :focus-visible),
 footer a:is(:hover, :focus-visible) {
