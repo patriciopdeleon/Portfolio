@@ -4,11 +4,9 @@
     --primary-font-color: #333;
     --font-color-name: #333;
     --font-color-nav: #999;
-    --font-color-nav-hover: #777777;
     --font-color-title: #337ab7;
     --font-color-p: #999;
     --font-color-footer: #777777;
-    --font-color-footer-hover: #999;
     --footer-bg-color: #eeeeee;
 }
 
@@ -18,11 +16,9 @@
     --primary-font-color: #777777;
     --font-color-name: #bec4cb;
     --font-color-nav: #777;
-    --font-color-nav-hover: #bec4cb;
     --font-color-title: #78dce8;
     --font-color-p: #777;
     --font-color-footer: #777777;
-    --font-color-footer-hover: #bec4cb;
     --footer-bg-color: #202530;
 }
 
@@ -87,10 +83,6 @@ header {
     color: var(--font-color-name);
 }
 
-#name a:hover {
-    text-decoration: none;
-}
-
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -102,12 +94,6 @@ nav a {
     color: var(--font-color-nav);
     font-weight: 250;
     font-size: 16px;
-}
-
-nav a:hover {
-    text-decoration: none;
-    color:var(--font-color-nav-hover);
-
 }
 
 /* #theme-toggle {
@@ -146,10 +132,6 @@ nav a:hover {
 #main-content h2 a {
     text-decoration: none;
     color:inherit;
-}
-
-#main-content h2 a:hover {
-    text-decoration: underline;
 }
 
 #main-content p {
@@ -201,9 +183,13 @@ footer a {
     font-weight: 250;
 }
 
-footer a:hover {
-    text-decoration: none;
-    color: var(--font-color-footer-hover);
+#name a:is(:hover, :focus-visible),
+nav a:is(:hover, :focus-visible),
+#main-content h2 a:is(:hover, :focus-visible),
+footer a:is(:hover, :focus-visible) {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: .18em;
 }
 
 /* Keep the compact switch inside a larger pointer and keyboard target. */
