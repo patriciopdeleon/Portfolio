@@ -3,7 +3,9 @@
     --bg-color: #f7f8f9;
     --primary-font-color: #333;
     --font-color-name: #333;
+    --font-color-name-suffix: var(--bg-color);
     --font-color-nav: #999;
+    --nav-divider-color: var(--bg-color);
     --font-color-title: #337ab7;
     --font-color-p: #999;
     --font-color-footer: #777777;
@@ -15,7 +17,9 @@
     --bg-color: #191E29;
     --primary-font-color: #777777;
     --font-color-name: #edf2f7;
+    --font-color-name-suffix: #333;
     --font-color-nav: #777;
+    --nav-divider-color: #333;
     --font-color-title: #78dce8;
     --font-color-p: #777;
     --font-color-footer: #777777;
@@ -49,11 +53,12 @@ body {
 header {
     position: relative;
     background-color: var(--primary-color);
-    padding: 64px 0 20px;
+    padding: 48px 0 20px;
     /* margin-top: 30px; */
 }
 
 #inside-header {
+    padding-inline: 20px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -70,11 +75,13 @@ header {
 }
 
 #name {
+    position: relative;
+    top: -32px;
     margin: 0;
-    font-size: 24px;
-    line-height: 1.2em;
+    font-size: 20px;
+    line-height: 1.4;
     word-wrap: break-word;
-    font-weight: 600;
+    font-weight: 400;
     /* text-transform: none; */
 }
 
@@ -83,17 +90,36 @@ header {
     color: var(--font-color-name);
 }
 
+#name .name-suffix {
+    color: var(--font-color-name-suffix);
+}
+
 nav {
     display: flex;
     flex-wrap: wrap;
     gap: 12px 30px;
 }
 
+nav a + a {
+    position: relative;
+}
+
+nav a + a::before {
+    content: "";
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    height: 1em;
+    border-left: 1px solid var(--nav-divider-color);
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
 nav a {
     text-decoration: none;
     color: var(--font-color-nav);
     font-weight: 250;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 /* #theme-toggle {
@@ -192,6 +218,10 @@ footer a:is(:hover, :focus-visible) {
 }
 
 /* Keep the compact switch inside a larger pointer and keyboard target. */
+header .theme-switch {
+    top: 8px;
+}
+
 .theme-switch {
     position: absolute;
     top: 11px;
@@ -251,16 +281,22 @@ footer a:is(:hover, :focus-visible) {
 @media screen and (max-width: 768px) {
     #inside-header {
         flex-direction: column;
-        text-align: center;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
     }
 
     nav {
-        justify-content: center;
+        justify-content: flex-start;
         gap: 12px 24px;
     }
 
     nav a {
-        font-size: 14px;
+        font-size: 12px;
+    }
+
+    nav a + a::before {
+        left: -12px;
     }
 
     .theme-switch {
